@@ -7,6 +7,8 @@ https.get(url, (response) => {
     })
     response.on('end', () => {
         console.log(webpageText)
+
+
         /*
         Write some code that
         (a) finds all of the words from inside the <h1> tag of a webpage, and
@@ -28,6 +30,14 @@ https.get(url, (response) => {
         */
 
         // YOUR CODE HERE:
+    const getWords = webpageText.split('<h1>)')
+    heading.pop()
+    const arrayofWords = heading.map(heading => {
+      const len = heading.split('>').length
+      const headingText = heading.split('>') [len - 1]
+      return headingText.split(' ')
+    })
+    console.log(arrayofWords)
 
 
 
